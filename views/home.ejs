@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<% let a = 30 %>
+
+<div class="home-container">
+
+  
+  <h1>Home</h1>
+  
+  <ul class="home">
+    <% posts.forEach(function(user){ %>
+      <li>
+        <p class="listTitle"><%= user.title %></p>
+        <p class="listBody"><%= user.body.substring(0,100) %>...<a href="posts/<%=user.title%>" class="readmore">Read more</a></p>
+        
+      </li>
+      <% }); %>
+    </ul>
+    
+    <a href="/compose" class="btn btn-primary">Add post</a>
+    
+  </div>
+
+<%- include('partials/footer') %>
